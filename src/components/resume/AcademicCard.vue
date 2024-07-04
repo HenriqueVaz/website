@@ -1,7 +1,7 @@
 <template>
     <v-card class="mx-auto" prepend-icon="$vuetify" subtitle="The #1 Vue UI Library">
         <template v-slot:title>
-            <span class="font-weight-black">Welcome to Vuetify</span>
+            <span class="font-weight-black">Education</span>
         </template>
 
         <v-card-text class="bg-surface-light pt-4">

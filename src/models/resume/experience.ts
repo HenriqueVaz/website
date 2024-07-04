@@ -2,8 +2,8 @@ export interface Experience {
     positions: string[];
     at: string;
     logo?: string;
-    start: Date;
-    end?: Date;
+    start: string;
+    end?: string;
     description: string;
     type: "academic" | "professional";
 }

@@ -193,7 +193,16 @@ const data: PersonalInfo = {
 </script>
 
 <template>
-    <v-card class="mx-auto" prepend-icon="$vuetify" :subtitle="data.location">
+    <v-card class="mx-auto" :subtitle="data.location">
+        <template v-slot:prepend>
+            <v-avatar class="ma-2" size="64px">
+                <v-img
+                    alt="Avatar"
+                    src="https://media.licdn.com/dms/image/C4D03AQEiRrMGb96N8Q/profile-displayphoto-shrink_400_400/0/1659544491192?e=1725494400&v=beta&t=nIfNe6uUnRIxugTOzzg3xpp4nLPH9492uFmkk10n8Q8"
+                ></v-img>
+            </v-avatar>
+        </template>
+
         <template v-slot:title>
             <span class="font-weight-black">{{ data.name }}</span>
         </template>
@@ -207,8 +216,14 @@ const data: PersonalInfo = {
                 <v-list-item title="Languages">
                     <template v-slot:subtitle>
                         <v-list>
-                            <v-list-item v-for="language in data.languages">
-                                {{ language.language }}
+                            <v-list-item
+                                :title="language.language"
+                                v-for="language in data.languages"
+                            >
+                                <v-progress-linear
+                                    color="black"
+                                    :model-value="language.expertise"
+                                ></v-progress-linear>
                             </v-list-item>
                         </v-list>
                     </template>

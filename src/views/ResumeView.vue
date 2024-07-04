@@ -7,12 +7,12 @@ import ProfessionalCard from "../components/resume/ProfessionalCard.vue";
 <template>
     <v-container id="resume-view">
         <v-row>
-            <v-col cols="4">
+            <v-col cols="3">
                 <v-row id="personal-section" class="pt-5">
                     <PersonalCard />
                 </v-row>
             </v-col>
-            <v-col cols="8">
+            <v-col cols="9">
                 <v-row id="professional-section" class="pt-5">
                     <ProfessionalCard />
                 </v-row>
