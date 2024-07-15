@@ -204,16 +204,18 @@ const data: PersonalInfo = {
         </template>
 
         <template v-slot:title>
-            <span class="font-weight-black">{{ data.name }}</span>
+            <span class="font-weight-black text-h5">{{ data.name }}</span>
         </template>
 
         <v-card-text class="bg-surface-light pt-4">
             <v-list>
-                <v-list-item prepend-icon="mdi-email" title="E-mail">
+                <v-list-item prepend-icon="mdi-email" class="main-list-item">
+                    <template v-slot:title><p class="font-weight-black">E-mail</p></template>
                     <template v-slot:subtitle>{{ data.email }}</template>
                 </v-list-item>
                 <v-divider class="ma-2"></v-divider>
-                <v-list-item title="Languages">
+                <v-list-item class="main-list-item">
+                    <template v-slot:title><p class="font-weight-black">Languages</p></template>
                     <template v-slot:subtitle>
                         <v-list>
                             <v-list-item
@@ -229,10 +231,14 @@ const data: PersonalInfo = {
                     </template>
                 </v-list-item>
                 <v-divider class="ma-2"></v-divider>
-                <v-list-item title="Tools">
+                <v-list-item class="main-list-item">
+                    <template v-slot:title><p class="font-weight-black">Tools</p></template>
                     <template v-slot:subtitle>
                         <v-list>
-                            <v-list-item v-for="toolGroup in data.tools" :title="toolGroup.group">
+                            <v-list-item v-for="toolGroup in data.tools">
+                                <template v-slot:title>
+                                    <p class="font-weight-bold">{{ toolGroup.group }}</p>
+                                </template>
                                 {{ toolGroup.items.map((item) => item.name).join(", ") }}
                                 <!--<v-img v-for="item in toolGroup.items" :src="item.logo" width="50px"></v-img>-->
                             </v-list-item>
@@ -240,13 +246,11 @@ const data: PersonalInfo = {
                     </template>
                 </v-list-item>
                 <v-divider class="ma-2"></v-divider>
-                <v-list-item title="Skills">
+                <v-list-item class="main-list-item">
+                    <template v-slot:title><p class="font-weight-black">Skills</p></template>
                     <template v-slot:subtitle>
                         <v-list density="compact">
                             {{ data.skills.map((skill) => skill.name).join(", ") }}
-                            <!-- <v-list-item v-for="skill in data.skills">
-                                {{ skill.name }}
-                            </v-list-item>-->
                         </v-list>
                     </template>
                 </v-list-item>
@@ -254,3 +258,9 @@ const data: PersonalInfo = {
         </v-card-text>
     </v-card>
 </template>
+
+<style lang="scss" scoped>
+.main-list-item {
+    font-weight: 700 !important;
+}
+</style>
