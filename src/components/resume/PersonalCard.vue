@@ -207,7 +207,7 @@ const data: PersonalInfo = {
             <span class="font-weight-black text-h5">{{ data.name }}</span>
         </template>
 
-        <v-card-text class="bg-surface-light pt-4">
+        <v-card-text class="bg-surface-light pt-2">
             <v-list>
                 <v-list-item prepend-icon="mdi-email" class="main-list-item">
                     <template v-slot:title><p class="font-weight-black">E-mail</p></template>
