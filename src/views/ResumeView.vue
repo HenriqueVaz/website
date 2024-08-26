@@ -85,15 +85,15 @@ const academicExperiences: Experience[] = [
 </script>
 
 <template>
-    <v-container id="resume-view">
+    <v-container id="resume-view" fluid class="primary fill-height pa-10">
         <v-row>
-            <v-col cols="3">
-                <v-row id="personal-section" class="pt-5">
+            <v-col cols="4">
+                <v-row id="personal-section">
                     <PersonalCard />
                 </v-row>
             </v-col>
-            <v-col cols="9">
-                <v-row id="professional-section" class="pt-5">
+            <v-col cols="8">
+                <v-row id="professional-section">
                     <ExperienceCard
                         title="Professional Experience"
                         :experiences="professionalExperiences"
@@ -115,14 +115,6 @@ const academicExperiences: Experience[] = [
 
 #resume-view {
     background-color: var(--blue-munsell);
-}
-
-#professional-section {
-    width: 100%;
-}
-
-#academic-section {
-    width: 100%;
 }
 
 #personal-section {

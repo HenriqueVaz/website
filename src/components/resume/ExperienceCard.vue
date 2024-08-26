@@ -10,7 +10,7 @@ const date = useDate();
 <template>
     <v-card class="w-100">
         <template v-slot:title>
-            <span class="font-weight-black">{{ title }}</span>
+            <span class="font-weight-bold">{{ title }}</span>
         </template>
 
         <v-card-text class="bg-surface-light pt-4">
@@ -18,11 +18,11 @@ const date = useDate();
                 <v-list-group v-for="experience in experiences">
                     <template v-slot:activator="{ props }">
                         <v-list-item v-bind="props" :title="experience.positions.join(', ')">
-                            <template v-slot:prepend>
+                            <!--<template v-slot:prepend>
                                 <v-avatar class="ma-2" size="64px">
                                     <v-img alt="Avatar" :src="experience.logo"></v-img>
                                 </v-avatar>
-                            </template>
+                            </template>-->
                             <template v-slot:title>
                                 <span class="font-weight-bold">{{
                                     experience.positions.join(", ")
