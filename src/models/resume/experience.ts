@@ -4,6 +4,6 @@ export interface Experience {
     logo?: string;
     start: string;
     end?: string;
-    description: string;
+    description: string[];
     type: "academic" | "professional";
 }

@@ -207,8 +207,8 @@ const data: PersonalInfo = {
             <span class="font-weight-bold text-h5">{{ data.name }}</span>
         </template>
 
-        <v-card-text class="bg-surface-light pt-2">
-            <v-list>
+        <v-card-text class="bg-surface-light pa-2">
+            <v-list slim>
                 <v-list-item prepend-icon="mdi-email" class="main-list-item">
                     <template v-slot:title><p class="font-weight-bold">E-mail</p></template>
                     <template v-slot:subtitle>{{ data.email }}</template>
@@ -217,7 +217,7 @@ const data: PersonalInfo = {
                 <v-list-item>
                     <template v-slot:title><p class="font-weight-bold">Languages</p></template>
                     <template v-slot:subtitle>
-                        <v-list density="compact">
+                        <v-list slim density="compact">
                             <v-list-item
                                 :title="language.language"
                                 v-for="language in data.languages"
@@ -234,7 +234,7 @@ const data: PersonalInfo = {
                 <v-list-item class="main-list-item">
                     <template v-slot:title><p class="font-weight-bold">Tools</p></template>
                     <template v-slot:subtitle>
-                        <v-list>
+                        <v-list slim>
                             <v-list-item v-for="toolGroup in data.tools">
                                 <template v-slot:title>
                                     <p class="font-weight-bold text-subtitle-2">
@@ -250,7 +250,7 @@ const data: PersonalInfo = {
                 <v-divider class="ma-2"></v-divider>
                 <v-list-item>
                     <template v-slot:title><p class="font-weight-bold">Skills</p></template>
-                    <v-list-item-subtitle tag="p" class="skills">
+                    <v-list-item-subtitle tag="p">
                         {{ data.skills.map((skill) => skill.name).join(", ") }}
                     </v-list-item-subtitle>
                 </v-list-item>
@@ -260,7 +260,8 @@ const data: PersonalInfo = {
 </template>
 
 <style lang="scss">
-.skills {
+div,
+p {
     -webkit-line-clamp: unset !important;
 }
 </style>
