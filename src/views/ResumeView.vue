@@ -40,7 +40,7 @@ const professionalExperiences: Experience[] = [
         positions: ["Full Stack Developer"],
         at: "Outdare, Lisbon, Portugal",
         logo: "https://www.outdare.pt/wp-content/uploads//2020/07/banner.svg",
-        start: "2015-02-01",
+        start: "2014-11-01",
         end: "2018-03-01",
         description: [
             "Co-founded a startup, etNos, after graduating from college, which eventually merged into Outdare.",
