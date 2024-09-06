@@ -97,12 +97,12 @@ const academicExperiences: Experience[] = [
 <template>
     <v-container id="resume-view" fluid>
         <v-row>
-            <v-col cols="12" sm="3" md="3" class="pa-5">
+            <v-col cols="12" sm="4" md="4" class="pa-5">
                 <v-row id="personal-section">
                     <PersonalCard />
                 </v-row>
             </v-col>
-            <v-col cols="12" sm="9" md="9" class="pa-5">
+            <v-col cols="12" sm="8" md="8" class="pa-5">
                 <v-row id="professional-section">
                     <ExperienceCard
                         title="Professional Experience"

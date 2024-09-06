@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import photo from "@/assets/images/1659544491192.jpeg";
 import type { PersonalInfo } from "@/models/resume/personalInfo";
 
 const data: PersonalInfo = {
@@ -28,6 +29,12 @@ const data: PersonalInfo = {
         {
             name: "Certificate C1 Advanced English",
             entity: "British Council"
+        }
+    ],
+    awards: [
+        {
+            name: "Technology & Engineering Emmy Award 2021/2022",
+            entity: "The National Academy of Television Arts and Sciences"
         }
     ],
     socials: [
@@ -196,10 +203,7 @@ const data: PersonalInfo = {
     <v-card class="mx-auto" :subtitle="data.location">
         <template v-slot:prepend>
             <v-avatar class="ma-2" size="64px">
-                <v-img
-                    alt="Avatar"
-                    src="https://media.licdn.com/dms/image/C4D03AQEiRrMGb96N8Q/profile-displayphoto-shrink_400_400/0/1659544491192?e=1725494400&v=beta&t=nIfNe6uUnRIxugTOzzg3xpp4nLPH9492uFmkk10n8Q8"
-                ></v-img>
+                <v-img alt="Avatar" :src="photo"></v-img>
             </v-avatar>
         </template>
 
@@ -248,11 +252,44 @@ const data: PersonalInfo = {
                     </template>
                 </v-list-item>
                 <v-divider class="ma-2"></v-divider>
+                <v-list-item class="main-list-item">
+                    <template v-slot:title><p class="font-weight-bold">Awards</p></template>
+                    <template v-slot:subtitle>
+                        <v-list slim>
+                            <v-list-item v-for="award in data.awards">
+                                <v-list-item-title class="text-wrap">
+                                    <p class="font-weight-bold text-subtitle-2">
+                                        {{ award.name }}
+                                    </p>
+                                </v-list-item-title>
+                                {{ award.entity }}
+                            </v-list-item>
+                        </v-list>
+                    </template>
+                </v-list-item>
+                <v-divider class="ma-2"></v-divider>
                 <v-list-item>
                     <template v-slot:title><p class="font-weight-bold">Skills</p></template>
                     <v-list-item-subtitle tag="p">
                         {{ data.skills.map((skill) => skill.name).join(", ") }}
                     </v-list-item-subtitle>
+                </v-list-item>
+                <v-divider class="ma-2"></v-divider>
+                <v-list-item class="main-list-item">
+                    <template v-slot:title><p class="font-weight-bold">Certifications</p></template>
+                    <template v-slot:subtitle>
+                        <v-list slim>
+                            <v-list-item v-for="certification in data.certifications">
+                                <template v-slot:title>
+                                    <p class="font-weight-bold text-subtitle-2">
+                                        {{ certification.name }}
+                                    </p>
+                                </template>
+                                {{ certification.entity }}
+                                <!--<v-img v-for="item in toolGroup.items" :src="item.logo" width="50px"></v-img>-->
+                            </v-list-item>
+                        </v-list>
+                    </template>
                 </v-list-item>
             </v-list>
         </v-card-text>
