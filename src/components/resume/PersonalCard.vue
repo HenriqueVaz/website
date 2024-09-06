@@ -270,9 +270,18 @@ const data: PersonalInfo = {
                 <v-divider class="ma-2"></v-divider>
                 <v-list-item>
                     <template v-slot:title><p class="font-weight-bold">Skills</p></template>
-                    <v-list-item-subtitle tag="p">
-                        {{ data.skills.map((skill) => skill.name).join(", ") }}
-                    </v-list-item-subtitle>
+					<template v-slot:subtitle>
+                        <v-list slim>
+                            <v-list-item>
+                                <template v-slot:title>
+                                    <p class="text-subtitle-2 text-wrap">
+                                        {{ data.skills.map((skill) => skill.name).join(", ") }}
+                                    </p>
+                                </template>
+                                <!--{{ certification.entity }}-->
+                            </v-list-item>
+                        </v-list>
+                    </template>
                 </v-list-item>
                 <v-divider class="ma-2"></v-divider>
                 <v-list-item class="main-list-item">
